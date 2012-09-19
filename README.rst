@@ -20,8 +20,14 @@ a big numbers of bundles.
   
   Also it will reset the &rtp, and will generate the help tag file.
 
-* Install:
+* Install and Useage
 
-  add ``Rykka/localbundle.vim`` to your vimrc
+  Use it with Vundle_.
+  Put this in your vimrc, should be put after your Bundle part::
+      
+      Bundle 'Rykka/localbundle.vim'
+
+      set rtp+=~/.vim/bundle/localbundle.vim
+      call localbundle#init()
 
 .. _Vundle: http://github.com/gmarik/vundle
