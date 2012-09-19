@@ -67,12 +67,9 @@ fun! localbundle#install() abort "{{{
         call s:log('$ '.cmd)
         call s:log('> '.out)
     endif
-
-    if 0 != v:shell_error
-        return 'error'
-    else
-        return 'updated'
-    end
+    
+    sil! exe 'helptags ' g:localbundle_dir.'/doc'
+    call localbundle#init()
 endfun "}}}
 
 let &cpo = s:cpo_save
