@@ -9,6 +9,7 @@ let s:cpo_save = &cpo
 set cpo-=C
 
 com! LocalBundle call localbundle#install()
+
 fun! localbundle#init() "{{{
     if !exists('g:localbundle_dir')
         let g:localbundle_dir = expand('$HOME/.vim/localbundle')
@@ -23,6 +24,7 @@ fun! localbundle#init() "{{{
         exe 'set rtp+='.fnameescape(g:localbundle_dir.'/after')
     endif
 endfun "}}}
+
 fun! s:log(msg) "{{{
     echo a:msg
 endfun "}}}
