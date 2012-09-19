@@ -21,8 +21,6 @@ fun! localbundle#init() "{{{
         exe 'set rtp^='.fnameescape(g:localbundle_rtp)
         exe 'set rtp^='.fnameescape(g:localbundle_dir)
         exe 'set rtp+='.fnameescape(g:localbundle_dir.'/after')
-        exe 'set rtp+='.fnameescape(expand('$HOME/.vim/bundle/vundle'))
-        exe 'set rtp+='.fnameescape(expand('$HOME/.vim/bundle/localbundle.vim'))
     endif
 endfun "}}}
 fun! s:log(msg) "{{{
