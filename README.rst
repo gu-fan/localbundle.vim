@@ -4,7 +4,7 @@ Intro
 This is a vim plugin for the Vundle_ users.
 seperated from my previous forked vundle repo to a single plugin.
 
-It will move all file of the bundles in ~/.vim/bundle/ into ~/.vim/localbundle/
+It will copy all file of the bundles in ~/.vim/bundle/ into ~/.vim/localbundle/
 
 and remove runtimepath of these bundles. 
 and add  ~/.vim/localbundle/ to &rtp.
