@@ -32,4 +32,7 @@ a big numbers of bundles.
 
   ``g:localbundle_rtp`` can be used to add another &rtp if needed.
 
+  You can get the latest version at LocalBundle_
+
 .. _Vundle: http://github.com/gmarik/vundle
+.. _LocalBundle: https://github.com/Rykka/localbundle.vim 
