@@ -26,6 +26,7 @@ fun! localbundle#init() "{{{
 endfun "}}}
 
 fun! s:log(msg) "{{{
+    redraw
     echo a:msg
 endfun "}}}
 fun! s:system(cmd) abort "{{{
