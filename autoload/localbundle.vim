@@ -26,14 +26,14 @@ fun! localbundle#init() "{{{
 endfun "}}}
 
 fun! s:log(msg) "{{{
-    redraw
-    echo a:msg
+    let g:localbundle_log .= a:msg . "\n"
 endfun "}}}
 fun! s:system(cmd) abort "{{{
   return system(a:cmd)
 endfun "}}}
 fun! localbundle#install() abort "{{{
     
+    let g:localbundle_log = ""
     let local_dir = shellescape(g:localbundle_dir)
     if !exists("g:bundle_dir")
         let g:bundle_dir = expand('$HOME/.vim/bundle') 
@@ -41,6 +41,8 @@ fun! localbundle#install() abort "{{{
     let bundle_dir = shellescape(g:bundle_dir)
     call s:log('')
     call s:log('Remove dir of localbundle')
+    redraw 
+    echo "Remove dir"
     if has('win32') || has('win64')
         let cmd = "rd /S /Q ".local_dir
     else
@@ -54,6 +56,8 @@ fun! localbundle#install() abort "{{{
 
     call s:log('')
     call s:log('copy to localbundle ')
+    redraw 
+    echo "copy to dir"
     if has('win32') || has('win64')
         let dirs = split(glob(g:bundle_dir.'/*/'),'\n')
         for dir in dirs
@@ -69,8 +73,13 @@ fun! localbundle#install() abort "{{{
         call s:log('> '.out)
     endif
     
+    redraw 
+    echo "HelpTags"
     sil! exe 'helptags ' g:localbundle_dir.'/doc'
     call localbundle#init()
+
+    redraw 
+    echo "Done. You can view the log by 'echo g:localbundle_log'"
 endfun "}}}
 
 let &cpo = s:cpo_save

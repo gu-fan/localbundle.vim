@@ -32,6 +32,8 @@ a big numbers of bundles.
 
   ``g:localbundle_rtp`` can be used to add another &rtp if needed.
 
+  You can check the log by ``echo g:localbundle_log``
+
   You can get the latest version at LocalBundle_
 
 .. _Vundle: http://github.com/gmarik/vundle
