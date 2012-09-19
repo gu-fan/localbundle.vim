@@ -23,11 +23,13 @@ a big numbers of bundles.
 * Install and Useage
 
   Use it with Vundle_.
-  Put this in your vimrc, should be put after your Bundle part::
+  Put this in your vimrc, 
+  should be put at the end of your Bundle part::
       
       Bundle 'Rykka/localbundle.vim'
 
-      set rtp+=~/.vim/bundle/localbundle.vim
       call localbundle#init()
+
+  if you need other rtp, ``g:localbundle_rtp`` can be used.
 
 .. _Vundle: http://github.com/gmarik/vundle
