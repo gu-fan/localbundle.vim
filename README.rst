@@ -30,7 +30,6 @@ a big numbers of bundles.
 
       call localbundle#init()
 
-
   if you need other rtp, ``g:localbundle_rtp`` can be used.
 
 .. _Vundle: http://github.com/gmarik/vundle
