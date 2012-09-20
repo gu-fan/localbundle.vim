@@ -67,7 +67,11 @@ fun! localbundle#install() abort "{{{
             call s:log('> '.out)
         endfor
     else
-        let cmd = "cp -rnl ".bundle_dir."/*/* ".local_dir
+        let opts = "-rn "
+        if !has("mac")
+            let opts .= " -l "
+        endif
+        let cmd = "cp ".opts.bundle_dir."/*/* ".local_dir
         let out = s:system(cmd)
         call s:log('$ '.cmd)
         call s:log('> '.out)
