@@ -3,7 +3,7 @@
 "    File: localbundle.vim
 " Summary: move bundle into localbundle.
 "  Author: Rykka G.F
-"  Update: 2012-09-19
+"  Update: 2012-12-19
 "=============================================
 let s:cpo_save = &cpo
 set cpo-=C
@@ -11,9 +11,6 @@ set cpo-=C
 com! LocalBundle call localbundle#install()
 
 fun! localbundle#init() "{{{
-    if !exists('g:localbundle_dir')
-        let g:localbundle_dir = expand('$HOME/.vim/localbundle')
-    endif
     if !exists('g:localbundle_rtp')
         let g:localbundle_rtp = ''
     endif
@@ -34,7 +31,11 @@ endfun "}}}
 fun! localbundle#install() abort "{{{
     
     let g:localbundle_log = ""
+    if !exists('g:localbundle_dir')
+        let g:localbundle_dir = expand('$HOME/.vim/localbundle')
+    endif
     let local_dir = shellescape(g:localbundle_dir)
+
     if !exists("g:bundle_dir")
         let g:bundle_dir = expand('$HOME/.vim/bundle') 
     endif
