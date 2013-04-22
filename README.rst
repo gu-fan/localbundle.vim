@@ -18,7 +18,7 @@ a big numbers of bundles.
 
   This will copy all bundles in ~/.vim/bundle/ into ~/.vim/localbundle/
   
-  Also it will reset the &rtp, and will generate the help tag file.
+  It will reset the &rtp, and generate the help tag file.
 
 * Install and Useage
 
@@ -27,14 +27,22 @@ a big numbers of bundles.
   should be put at the end of your Bundle part::
       
       Bundle 'Rykka/localbundle.vim'
+      if isdirectory(expand('~/.vim/bundle/localbundle.vim'))
+          call localbundle#init()
+      endif
 
-      call localbundle#init()
 
-  ``g:localbundle_rtp`` can be used to add another &rtp if needed.
+  Use 'set rtp^=' to add another &rtp if needed.
 
-  You can check the log by ``echo g:localbundle_log``
+  You can review the log by ``g:localbundle_log``
 
   You can get the latest version at LocalBundle_
+
+* Options:
+
+  ``g:localbundle_dir``
+
+  Your destination dir for localbundle.
 
 .. _Vundle: http://github.com/gmarik/vundle
 .. _LocalBundle: https://github.com/Rykka/localbundle.vim 
