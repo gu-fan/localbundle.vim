@@ -57,9 +57,13 @@ fun! localbundle#install() abort "{{{
         if !has("mac")
             let opts .= " -l "
         endif
-        let cmd = "cp ".opts.bundle_dir."/*/* ".local_dir
-        let out = s:system(cmd)
-        call s:log('> '.out)
+        for b in g:bundles
+			echo b.rtpath
+			let cmd = "cp -r ".b.rtpath."/* ".local_dir
+			let out = s:system(cmd)
+			call s:log('> '.out)
+		endfor
+        " let cmd = "cp ".opts.bundle_dir."/*/* ".local_dir
     endif
     
     call s:log("Generating HelpTags:")
